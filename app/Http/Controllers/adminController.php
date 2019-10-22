@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class adminController extends Controller
 {
@@ -14,6 +15,7 @@ class adminController extends Controller
 
     public function Index()
     {
-        return 'Welcome root';
+        $user = Auth::user();
+        return 'Welcome Mr.' . $user->name . ' Your ID : ' . $user->id;
     }
 }
