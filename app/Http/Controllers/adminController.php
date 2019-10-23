@@ -11,6 +11,7 @@ class adminController extends Controller
     public function __construct()
     {
         $this->middleware('isAdmin');
+        $this->middleware('auth');
     }
 
     public function Index()
